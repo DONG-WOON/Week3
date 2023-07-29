@@ -7,31 +7,6 @@
 
 import UIKit
 
-enum Setting: CaseIterable {
-    case general
-    case personal
-    case etc
-    
-    var korean: String {
-        switch self {
-        case .general: return "전체설정"
-        case .personal: return "개인설정"
-        case .etc: return "기타설정"
-        }
-    }
-    
-    static subscript(_ title: Setting) -> [String] {
-        switch title {
-        case .general: return  ["공지사항", "실험실", "버전정보"]
-        case .personal: return  ["개인/보안", "알림", "채팅", "멀티프로필"]
-        case .etc: return ["고객센터/도움말"]
-        }
-    }
-    
-    static let titleCount = Self.allCases.count
-}
-
-
 class SettingViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -39,11 +14,13 @@ class SettingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        guard let section = Setting(rawValue: section) else { return nil }
+        
         switch section {
-        case 0: return Setting.general.korean
-        case 1: return Setting.personal.korean
-        case 2: return Setting.etc.korean
-        default: return nil
+        case .general: return Setting.general.korean
+        case .personal: return Setting.personal.korean
+        case .etc: return Setting.etc.korean
         }
     }
     
@@ -51,7 +28,27 @@ class SettingViewController: UITableViewController {
         return Setting.titleCount
     }
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
-//    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let section = Setting(rawValue: section) else { return 0 }
+        
+        switch section {
+        case .general: return 3
+        case .personal: return 4
+        case .etc: return 1
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let section = Setting(rawValue: indexPath.section) else { return UITableViewCell() }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingViewCell", for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = Setting[section][indexPath.row]
+        
+        cell.contentConfiguration = content
+        
+        return cell
+    }
 }

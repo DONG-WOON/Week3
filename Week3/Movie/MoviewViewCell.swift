@@ -38,7 +38,7 @@ class MoviewViewCell: UITableViewCell {
     }
     
     func update(with movie: Movie) {
-        //        posterImageView.image = UIImage
+        posterImageView.image = UIImage(named: movie.title)
         titleLabel.text = movie.title
         releaseDateLabel.text = movie.releaseDate
         runtimeLabel.text = "\(movie.runtime / 60)시간 \(movie.runtime % 60)분"

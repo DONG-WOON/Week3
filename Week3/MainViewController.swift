@@ -1,19 +1,17 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Week3
 //
-//  Created by 서동운 on 7/27/23.
+//  Created by 서동운 on 7/30/23.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MainViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
-
 }
-

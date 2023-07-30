@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="-1102" y="515"/>
         </scene>
-        <!--case3-->
+        <!--Shop-->
         <scene sceneID="YGW-sC-Sdu">
             <objects>
                 <tableViewController id="OZY-pg-dyf" customClass="ShoppingViewController" customModule="Week3" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,15 +67,15 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6I-7X-5Xm">
                                     <rect key="frame" x="20" y="10" width="353" height="60"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bG-Fd-Glj">
-                                            <rect key="frame" x="10" y="5" width="273" height="50"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="리스트에 추가해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bG-Fd-Glj">
+                                            <rect key="frame" x="10" y="10" width="263" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb8-Ec-7SP">
-                                            <rect key="frame" x="293" y="5" width="50" height="50"/>
+                                            <rect key="frame" x="283" y="10" width="60" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="Qb8-Ec-7SP" secondAttribute="height" multiplier="1:1" id="a41-ge-oXN"/>
+                                                <constraint firstAttribute="width" secondItem="Qb8-Ec-7SP" secondAttribute="height" multiplier="1.5:1" id="a41-ge-oXN"/>
                                             </constraints>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
@@ -88,12 +88,12 @@
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     <constraints>
                                         <constraint firstItem="Qb8-Ec-7SP" firstAttribute="leading" secondItem="6bG-Fd-Glj" secondAttribute="trailing" constant="10" id="0V9-N3-T3L"/>
-                                        <constraint firstAttribute="bottom" secondItem="6bG-Fd-Glj" secondAttribute="bottom" constant="5" id="8jv-dq-wE8"/>
-                                        <constraint firstItem="Qb8-Ec-7SP" firstAttribute="top" secondItem="z6I-7X-5Xm" secondAttribute="top" constant="5" id="Qyy-rJ-l6B"/>
+                                        <constraint firstAttribute="bottom" secondItem="6bG-Fd-Glj" secondAttribute="bottom" constant="10" id="8jv-dq-wE8"/>
+                                        <constraint firstItem="Qb8-Ec-7SP" firstAttribute="top" secondItem="z6I-7X-5Xm" secondAttribute="top" constant="10" id="Qyy-rJ-l6B"/>
                                         <constraint firstAttribute="trailing" secondItem="Qb8-Ec-7SP" secondAttribute="trailing" constant="10" id="WiM-UZ-xTA"/>
                                         <constraint firstItem="6bG-Fd-Glj" firstAttribute="leading" secondItem="z6I-7X-5Xm" secondAttribute="leading" constant="10" id="kcb-Rf-OvA"/>
-                                        <constraint firstAttribute="bottom" secondItem="Qb8-Ec-7SP" secondAttribute="bottom" constant="5" id="lP6-da-U9P"/>
-                                        <constraint firstItem="6bG-Fd-Glj" firstAttribute="top" secondItem="z6I-7X-5Xm" secondAttribute="top" constant="5" id="lyf-Vi-TZN"/>
+                                        <constraint firstAttribute="bottom" secondItem="Qb8-Ec-7SP" secondAttribute="bottom" constant="10" id="lP6-da-U9P"/>
+                                        <constraint firstItem="6bG-Fd-Glj" firstAttribute="top" secondItem="z6I-7X-5Xm" secondAttribute="top" constant="10" id="lyf-Vi-TZN"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -116,23 +116,43 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEz-Wc-2eK">
                                             <rect key="frame" x="20" y="3" width="353" height="40.333333333333336"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVp-Pa-XhU">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVp-Pa-XhU">
                                                     <rect key="frame" x="10" y="0.0" width="40.333333333333336" height="40.333333333333336"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="XVp-Pa-XhU" secondAttribute="height" multiplier="1:1" id="2Xn-lK-jyo"/>
                                                     </constraints>
-                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system"/>
+                                                    <color key="tintColor" white="0.01100127551" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="checkmark.square" catalog="system"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system">
+                                                        <backgroundConfiguration key="background">
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </backgroundConfiguration>
+                                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="checkButtonDidTapped:" destination="iRO-3H-nPp" eventType="touchUpInside" id="vE1-z4-1lz"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oII-TR-gwH">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oII-TR-gwH">
                                                     <rect key="frame" x="302.66666666666669" y="0.0" width="40.333333333333314" height="40.333333333333336"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="oII-TR-gwH" secondAttribute="height" multiplier="1:1" id="RQs-Jf-KCg"/>
                                                     </constraints>
-                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                    <color key="tintColor" white="0.01100127551" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="star" catalog="system"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="star" catalog="system">
+                                                        <backgroundConfiguration key="background">
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </backgroundConfiguration>
+                                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="favoriteButtonDidTapped:" destination="iRO-3H-nPp" eventType="touchUpInside" id="fvd-CA-fyr"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cra-pK-Xmw">
                                                     <rect key="frame" x="60.333333333333329" y="9.6666666666666643" width="232.33333333333337" height="21"/>
@@ -176,7 +196,7 @@
                             <outlet property="delegate" destination="OZY-pg-dyf" id="eLB-7t-bhA"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="case3" image="3.circle.fill" catalog="system" id="EVl-u2-E0l"/>
+                    <tabBarItem key="tabBarItem" title="Shop" image="basket.fill" catalog="system" id="EVl-u2-E0l"/>
                     <connections>
                         <outlet property="inputFieldBackgroundView" destination="z6I-7X-5Xm" id="TTA-vw-E69"/>
                         <outlet property="inputTextField" destination="6bG-Fd-Glj" id="FiJ-vO-oq9"/>
@@ -184,7 +204,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LiA-h8-ShB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="515"/>
+            <point key="canvasLocation" x="-11.450381679389313" y="514.78873239436621"/>
         </scene>
         <!--case1-->
         <scene sceneID="Cxt-oo-uaL">
@@ -372,7 +392,7 @@
     <resources>
         <image name="1.circle.fill" catalog="system" width="128" height="123"/>
         <image name="2.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="3.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="basket.fill" catalog="system" width="128" height="108"/>
         <image name="bed.double.fill" catalog="system" width="128" height="82"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="iphone" catalog="system" width="112" height="128"/>

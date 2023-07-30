@@ -21,6 +21,7 @@ class ShoppingViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false
+        tableView.separatorStyle = .none
         inputFieldBackgroundView.rounded(cornerRadius: 5)
     }
     
@@ -40,6 +41,14 @@ class ShoppingViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingTableViewCell.identifier, for: indexPath) as? ShoppingTableViewCell else { return UITableViewCell() }
         
         cell.updateCell(with: shoppingList[indexPath.row])
+        
+        cell.boughtItem = { [weak self] isBought in
+            self?.shoppingList[indexPath.row].isBought = isBought
+        }
+        
+        cell.favoriteItem = { [weak self] isFavorite in
+            self?.shoppingList[indexPath.row].isFavorited = isFavorite
+        }
         
         return cell
     }

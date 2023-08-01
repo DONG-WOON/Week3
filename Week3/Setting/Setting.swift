@@ -27,8 +27,8 @@ enum Setting: Int, CaseIterable {
         self.init(rawValue: section)
     }
     
-    static subscript(_ title: Setting) -> [String] {
-        switch title {
+    static subscript(_ section: Setting) -> [String] {
+        switch section {
         case .general: return  ["공지사항", "실험실", "버전정보"]
         case .personal: return  ["개인/보안", "알림", "채팅", "멀티프로필"]
         case .etc: return ["고객센터/도움말"]

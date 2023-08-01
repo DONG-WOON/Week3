@@ -15,7 +15,6 @@ class MovieViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.allowsSelection = false
-        
     }
 
     // MARK: - Table view data source

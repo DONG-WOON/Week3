@@ -14,33 +14,21 @@ class SettingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        guard let section = Setting(rawValue: section) else { return nil }
-        
-        switch section {
-        case .general: return Setting.general.korean
-        case .personal: return Setting.personal.korean
-        case .etc: return Setting.etc.korean
-        }
+        guard let section = Setting(section: section) else { return nil }
+        return section.korean
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return Setting.titleCount
+        return Setting.sectionCount
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        guard let section = Setting(rawValue: section) else { return 0 }
-        
-        switch section {
-        case .general: return 3
-        case .personal: return 4
-        case .etc: return 1
-        }
+        guard let section = Setting(section: section) else { return 0 }
+        return Setting[section].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let section = Setting(rawValue: indexPath.section) else { return UITableViewCell() }
+        guard let section = Setting(section: indexPath.section) else { return UITableViewCell() }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingViewCell", for: indexPath)
         

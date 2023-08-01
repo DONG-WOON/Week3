@@ -8,6 +8,9 @@
 import Foundation
 
 enum Setting: Int, CaseIterable {
+    
+    static let sectionCount = Self.allCases.count
+    
     case general
     case personal
     case etc
@@ -20,6 +23,10 @@ enum Setting: Int, CaseIterable {
         }
     }
     
+    init?(section: Int) {
+        self.init(rawValue: section)
+    }
+    
     static subscript(_ title: Setting) -> [String] {
         switch title {
         case .general: return  ["공지사항", "실험실", "버전정보"]
@@ -27,6 +34,4 @@ enum Setting: Int, CaseIterable {
         case .etc: return ["고객센터/도움말"]
         }
     }
-    
-    static let titleCount = Self.allCases.count
 }

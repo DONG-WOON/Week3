@@ -20,13 +20,16 @@ class ShoppingViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
+        
         inputFieldBackgroundView.rounded(cornerRadius: 5)
     }
     
     @IBAction func addButtonDidTapped(_ sender: UIButton) {
         guard let name = inputTextField.text else { return }
+        
         shoppingList.append(ShoppingItem(isBought: false, isFavorited: false, name: name))
         inputTextField.text = nil
         

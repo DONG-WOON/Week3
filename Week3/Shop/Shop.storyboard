@@ -86,9 +86,6 @@
                                                         </backgroundConfiguration>
                                                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="checkButtonDidTapped:" destination="9xH-zU-r6u" eventType="touchUpInside" id="D89-yz-h2p"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQE-SB-CT1">
                                                     <rect key="frame" x="302.66666666666669" y="0.0" width="40.333333333333314" height="40.333333333333336"/>
@@ -105,9 +102,6 @@
                                                         </backgroundConfiguration>
                                                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="favoriteButtonDidTapped:" destination="9xH-zU-r6u" eventType="touchUpInside" id="Vmh-l2-re1"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBl-mk-G8j">
                                                     <rect key="frame" x="60.333333333333329" y="9.6666666666666643" width="232.33333333333337" height="21"/>

@@ -13,16 +13,17 @@ class ShoppingViewController: UITableViewController {
         ShoppingItem(isBought: true, isFavorited: false, name: "그립톡"),
         ShoppingItem(isBought: false, isFavorited: true, name: "화장품"),
         ShoppingItem(isBought: false, isFavorited: false, name: "제로콜라")
-    ]
+    ] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     @IBOutlet weak var inputFieldBackgroundView: UIView!
     @IBOutlet weak var inputTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.allowsSelection = false
-        tableView.separatorStyle = .none
         
         inputFieldBackgroundView.rounded(cornerRadius: 5)
     }
@@ -32,9 +33,22 @@ class ShoppingViewController: UITableViewController {
         
         shoppingList.append(ShoppingItem(isBought: false, isFavorited: false, name: name))
         inputTextField.text = nil
-        
-        tableView.reloadData()
     }
+    
+    @objc
+    func checkButtonDidTapped(_ sender: UIButton) {
+        let indexPathOfCell = sender.tag
+        shoppingList[indexPathOfCell].isBought.toggle()
+    }
+    
+    @objc
+    func favoriteButtonDidTapped(_ sender: UIButton) {
+        let indexPathOfCell = sender.tag
+        shoppingList[indexPathOfCell].isFavorited.toggle()
+    }
+}
+
+extension ShoppingViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shoppingList.count
@@ -42,17 +56,29 @@ class ShoppingViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingTableViewCell.identifier, for: indexPath) as? ShoppingTableViewCell else { return UITableViewCell() }
+        let item = shoppingList[indexPath.row]
+        print(indexPath)
         
-        cell.updateCell(with: shoppingList[indexPath.row])
+        cell.checkButton.tag = indexPath.row
+        cell.favoriteButton.tag = indexPath.row
         
-        cell.boughtItem = { [weak self] isBought in
-            self?.shoppingList[indexPath.row].isBought = isBought
-        }
+        cell.checkButton.addTarget(self, action: #selector(checkButtonDidTapped), for: .touchUpInside)
+        cell.favoriteButton.addTarget(self, action: #selector(favoriteButtonDidTapped), for: .touchUpInside)
         
-        cell.favoriteItem = { [weak self] isFavorite in
-            self?.shoppingList[indexPath.row].isFavorited = isFavorite
-        }
+        cell.updateCell(with: item)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        shoppingList.remove(at: indexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }

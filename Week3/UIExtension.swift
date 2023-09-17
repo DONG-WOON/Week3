@@ -18,3 +18,16 @@ extension UIView {
         }
     }
 }
+
+extension UIColor {
+    static func getColor(_ name: String) -> UIColor {
+        switch name {
+        case "red": return .red
+        case "orange": return .orange
+        case "green": return .green
+        case "purple": return .purple
+        case "tintColor": return .tintColor
+        default: return .black
+        }
+    }
+}
